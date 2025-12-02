@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7lp6unqffhsh"]
+
+[ext_resource type="Script" uid="uid://bmkghjqcyw6kd" path="res://Scripts/New/player.gd" id="1_jsrtk"]
+[ext_resource type="Texture2D" uid="uid://cayg6kpvv1ja1" path="res://Art/Revised/coin.png" id="2_cik4n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jsrtk"]
+radius = 48.010414
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_jsrtk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jsrtk")
+
+[node name="Coin" type="Sprite2D" parent="."]
+texture = ExtResource("2_cik4n")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(48, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="diamiter" type="ColorRect" parent="."]
+visible = false
+offset_left = -48.0
+offset_top = -2.0
+offset_right = 48.0
+offset_bottom = 2.0
+color = Color(0.640397, 0, 0.13761061, 1)
+metadata/_edit_use_anchors_ = true

@@ -11,11 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_old_button_pressed() -> void:
-	Globals.changeScene(Globals.oldGameTitleScene)
-	pass # Replace with function body.
-
-
-func _on_rebuilt_pressed() -> void:
-	Globals.changeScene(Globals.newTitleScreen)
+func _on_play_pressed() -> void:
+	Globals.changeScene(Globals.level1)
 	pass # Replace with function body.

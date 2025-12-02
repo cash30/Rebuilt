@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5aqq1e38ws5d"]
+
+[ext_resource type="Script" uid="uid://c8ifpccccjufi" path="res://Scripts/New/mario.gd" id="1_4mwoy"]
+[ext_resource type="Texture2D" uid="uid://dhu2ahaq1d0qe" path="res://icon.svg" id="1_ofb13"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mwoy"]
+radius = 63.0
+height = 126.0
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_4mwoy")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_ofb13")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4mwoy")

@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	if Globals.isPlayerBehindMysteryBox:
 		$Camera2D.position_smoothing_enabled = true
 		position = get_parent().get_node("Goal").global_position 
+		remove_from_group("player")
 		hide()
 	else:
 		show()

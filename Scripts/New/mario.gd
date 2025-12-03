@@ -17,12 +17,12 @@ func _ready():
 func _physics_process(delta):
 	
 	
-	if direction.x > 0 and !isFlipped:
-		scale.x = -myScale.x
-		isFlipped = true
-	elif direction.x < 0 and isFlipped:
+	if direction.x > 0 and isFlipped:
 		scale.x = -myScale.x
 		isFlipped = false
+	elif direction.x < 0 and !isFlipped:
+		scale.x = -myScale.x
+		isFlipped = true
 		
 	
 	if not player:

@@ -17,18 +17,29 @@ func _ready() -> void:
 	rad = $Marker2D.global_position.distance_to($Marker2D2.global_position)
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
+	if Globals.isPlayerBehindMysteryBox:
+		$Camera2D.position_smoothing_enabled = true
+		position = get_parent().get_node("Goal").global_position 
+		hide()
+	else:
+		show()
+		$Camera2D.position_smoothing_enabled = false
+		
+	if position.y > 250:
+		Globals.respawn()
+	
+	if not is_on_floor() and !Globals.isPlayerBehindMysteryBox:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_pressed("up") and is_on_floor():
 		velocity.y = jumpPower
 		
 		
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and !Globals.isPlayerBehindMysteryBox:
 		direction = 1
 		velocity.x = speed
 		
-	elif Input.is_action_pressed("left"):
+	elif Input.is_action_pressed("left") and !Globals.isPlayerBehindMysteryBox:
 		direction = -1
 		velocity.x = -speed
 		

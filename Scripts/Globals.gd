@@ -6,11 +6,13 @@ var level1            = load("res://Scenes/New/Level1.tscn")
 var level2            = load("res://Scenes/New/Level2.tscn")
 var newHowScene       = load("res://Scenes/New/how.tscn")
 var lastLevel         = load("res://Scenes/New/lastLevel.tscn")
+var pauseScene        = load("res://Scenes/New/pause_menu.tscn")
 var currentScene = titleScene
 var isPlayerBehindMysteryBox = false
 var shouldNextLevelAnimationBeShowing = false
 var shouldMusicBePlaying = false
 var isMusicPlaying = false
+var playPauseSound = false
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -18,6 +20,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	if Input.is_action_pressed("pause"):
+		toggle_pause()
+	
+	
 	if Input.is_action_pressed("restart"):
 		respawn()
 	pass
@@ -36,6 +43,10 @@ func nextLevel():
 		changeScene(lastLevel)
 	elif currentScene == lastLevel:
 		shouldMusicBePlaying = false
-		changeScene(titleScene)
+		changeScene(newTitleScreen)
 	
-	#respawn()
+func toggle_pause():
+	#get_tree().paused = !get_tree().paused
+	#print("toggleing paused")
+	#playPauseSound = true
+	pass

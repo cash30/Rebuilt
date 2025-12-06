@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ueml5e0buiuv"]
+[gd_scene load_steps=11 format=3 uid="uid://ueml5e0buiuv"]
 
 [ext_resource type="Script" uid="uid://cpno4n4c7b2t2" path="res://Scripts/New/title_screen_button_controller.gd" id="1_5d5gr"]
+[ext_resource type="FontFile" uid="uid://cv2yj7y7rjwyj" path="res://Fonts/Verdana/Verdana-Bold.ttf" id="1_j7er4"]
 [ext_resource type="Theme" uid="uid://qea6tr13hs17" path="res://Themes/button.tres" id="1_v0ptk"]
 [ext_resource type="Texture2D" uid="uid://dwqhf8qtprb7y" path="res://Art/Revised/mario.png" id="3_t8lra"]
 [ext_resource type="Texture2D" uid="uid://cayg6kpvv1ja1" path="res://Art/Revised/coin.png" id="4_ftmhu"]
@@ -144,10 +145,11 @@ color = Color(1, 0.42352942, 0, 1)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 48.0
+offset_top = 65.0
 offset_bottom = 241.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_j7er4")
 theme_override_font_sizes/font_size = 111
 text = "Mario's Lost Coin"
 horizontal_alignment = 1
@@ -157,14 +159,10 @@ script = ExtResource("1_5d5gr")
 
 [node name="Play" type="Button" parent="buttonController"]
 anchors_preset = -1
-anchor_left = 0.33072916
-anchor_top = 0.37037036
-anchor_right = 0.6562459
-anchor_bottom = 0.5972222
-offset_left = -2.0
-offset_top = -1.9999847
-offset_right = -1.9995117
-offset_bottom = -2.0
+anchor_left = 0.32899305
+anchor_top = 0.36728394
+anchor_right = 0.6545102
+anchor_bottom = 0.5941358
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(187.5, 95)
@@ -174,19 +172,25 @@ metadata/_edit_use_anchors_ = true
 
 [node name="How" type="Button" parent="buttonController"]
 anchors_preset = -1
-anchor_left = 0.33072916
-anchor_top = 0.37037036
-anchor_right = 0.6562459
-anchor_bottom = 0.60339504
-offset_left = -1.0
-offset_top = 202.00002
-offset_right = -0.9995117
-offset_bottom = 202.0
+anchor_left = 0.3298611
+anchor_top = 0.68209875
+anchor_right = 0.6553782
+anchor_bottom = 0.91512346
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(187.5, 95)
 theme = ExtResource("1_v0ptk")
 text = "How?"
+metadata/_edit_use_anchors_ = true
+
+[node name="main" type="Button" parent="buttonController"]
+anchors_preset = -1
+anchor_left = 0.012152778
+anchor_top = 0.026234567
+anchor_right = 0.1484375
+anchor_bottom = 0.10030864
+offset_right = -30.0
+text = "Back to Main Menu"
 metadata/_edit_use_anchors_ = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -213,3 +217,4 @@ texture = ExtResource("4_ftmhu")
 [connection signal="mouse_entered" from="buttonController/How" to="buttonController" method="_on_how_mouse_entered"]
 [connection signal="mouse_exited" from="buttonController/How" to="buttonController" method="_on_how_mouse_exited"]
 [connection signal="pressed" from="buttonController/How" to="buttonController" method="_on_how_pressed"]
+[connection signal="pressed" from="buttonController/main" to="buttonController" method="_on_main_pressed"]

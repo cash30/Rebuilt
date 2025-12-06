@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 Globals="*res://Scripts/Globals.gd"
 OldGlobals="*res://old/oldGlobals.gd"
 Music="*res://Scripts/New/music.gd"
+Pause="*res://Scripts/New/pause.gd"
 
 [display]
 

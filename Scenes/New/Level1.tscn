@@ -50,12 +50,13 @@ position = Vector2(192, -42)
 
 [node name="Label" type="Label" parent="text"]
 offset_left = -625.0
-offset_top = 31.0
-offset_right = -91.0
-offset_bottom = 250.0
+offset_top = 16.0
+offset_right = -86.538574
+offset_bottom = 235.0
 scale = Vector2(0.091, 0.091)
 theme_override_font_sizes/font_size = 160
 text = "Run! ->"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="text"]
 offset_left = -355.0
@@ -67,10 +68,10 @@ theme_override_font_sizes/font_size = 160
 text = "[R] to Restart."
 
 [node name="Label3" type="Label" parent="text"]
-offset_left = 120.0
-offset_top = 1.0
-offset_right = 1151.0
-offset_bottom = 221.0
-scale = Vector2(0.1, 0.1)
+offset_left = 108.0
+offset_right = 1779.0
+offset_bottom = 220.0
+scale = Vector2(0.069, 0.069)
 theme_override_font_sizes/font_size = 160
-text = "Jump in here!"
+text = "Jump Into the ? Block!"
+horizontal_alignment = 1

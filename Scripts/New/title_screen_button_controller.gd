@@ -40,3 +40,8 @@ func _on_how_mouse_entered() -> void:
 func _on_how_mouse_exited() -> void:
 	animator.play_backwards("howon")
 	pass # Replace with function body.
+
+
+func _on_main_pressed() -> void:
+	Globals.changeScene(Globals.titleScene)
+	pass # Replace with function body.

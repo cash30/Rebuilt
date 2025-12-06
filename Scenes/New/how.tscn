@@ -38,13 +38,12 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 151.0
-offset_bottom = 603.0
+offset_top = 164.0
+offset_bottom = 616.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "WASD to move, [ESC] to pause,
- [R] to restart
+text = "WASD to move,  [R] to restart
 
 Dont get caught by Mario!
 Run into the    block for safety"
@@ -62,7 +61,7 @@ script = ExtResource("2_v3yv3")
 metadata/_edit_use_anchors_ = true
 
 [node name="QuestionMark" type="Sprite2D" parent="."]
-position = Vector2(527, 563)
+position = Vector2(526, 483)
 scale = Vector2(3.2, 3.2)
 texture = ExtResource("1_o57us")
 

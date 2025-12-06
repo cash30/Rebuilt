@@ -3,7 +3,10 @@ var titleScene        = load("res://Scenes/title.tscn")
 var oldGameTitleScene = load("res://old/scenes/tastlevel.tscn")
 var newTitleScreen    = load("res://Scenes/New/new_title.tscn")
 var level1            = load("res://Scenes/New/Level1.tscn")
-var newHowScene = load("res://Scenes/New/how.tscn")
+var level2            = load("res://Scenes/New/Level2.tscn")
+var newHowScene       = load("res://Scenes/New/how.tscn")
+var lastLevel         = load("res://Scenes/New/lastLevel.tscn")
+var currentScene = titleScene
 var isPlayerBehindMysteryBox = false
 var shouldNextLevelAnimationBeShowing = false
 var shouldMusicBePlaying = false
@@ -20,11 +23,19 @@ func _process(_delta: float) -> void:
 	pass
 func changeScene(scene):
 	get_tree().change_scene_to_packed(scene)
+	currentScene = scene
 
 func respawn():
 	get_tree().reload_current_scene()
 
 func nextLevel():
-	print("if you made anouther level we could progress but you're just TOO LAZY to do that, huh?")
 	isPlayerBehindMysteryBox = false
-	respawn()
+	if currentScene == level1:
+		changeScene(level2)
+	elif currentScene == level2:
+		changeScene(lastLevel)
+	elif currentScene == lastLevel:
+		shouldMusicBePlaying = false
+		changeScene(titleScene)
+	
+	#respawn()

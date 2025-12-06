@@ -12,21 +12,3 @@
 <p>&nbsp;</p>
 <p>Controlls are as follows:<br /> WASD or arrows to move. (You can also use space to jump)<br /> umm.. yea thats pretty much all of the controlls. its just a platformer so there's not much in the way of coontrolls</p>
 </article>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="Layout-sidebar" data-view-component="true">
-<div class="BorderGrid about-margin" data-pjax="">
-<div class="BorderGrid-row">
-<div class="BorderGrid-cell"><details class="details-reset details-overlay details-overlay-dark ">
-<div class="Link--secondary pt-1 pl-2">&nbsp;</div>
-</details>
-<div class="hide-sm hide-md">&nbsp;</div>
-</div>
-</div>
-</div>
-</div>

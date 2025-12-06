@@ -1,43 +1,126 @@
-[gd_scene load_steps=6 format=3 uid="uid://ueml5e0buiuv"]
+[gd_scene load_steps=10 format=3 uid="uid://ueml5e0buiuv"]
 
 [ext_resource type="Script" uid="uid://cpno4n4c7b2t2" path="res://Scripts/New/title_screen_button_controller.gd" id="1_5d5gr"]
 [ext_resource type="Theme" uid="uid://qea6tr13hs17" path="res://Themes/button.tres" id="1_v0ptk"]
+[ext_resource type="Texture2D" uid="uid://dwqhf8qtprb7y" path="res://Art/Revised/mario.png" id="3_t8lra"]
+[ext_resource type="Texture2D" uid="uid://cayg6kpvv1ja1" path="res://Art/Revised/coin.png" id="4_ftmhu"]
 
-[sub_resource type="Animation" id="Animation_5d5gr"]
-resource_name = "playButtonSlide"
-length = 0.75
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1155, 293), Vector2(388, 293)]
-}
-
-[sub_resource type="Animation" id="Animation_t8lra"]
+[sub_resource type="Animation" id="Animation_4p0ph"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("buttonController/Play:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(388, 293)]
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonController/Play:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("buttonController/How:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("buttonController/How:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftmhu"]
+[sub_resource type="Animation" id="Animation_j7er4"]
+resource_name = "buttons"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonController/Play:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.02617994]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonController/Play:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_aad1q"]
+resource_name = "howon"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonController/How:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.02617994]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonController/How:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_ftmhu"]
+resource_name = "playoff"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5isib"]
 _data = {
-&"RESET": SubResource("Animation_t8lra"),
-&"playButtonSlide": SubResource("Animation_5d5gr")
+&"RESET": SubResource("Animation_4p0ph"),
+&"buttons": SubResource("Animation_j7er4"),
+&"howon": SubResource("Animation_aad1q"),
+&"playoff": SubResource("Animation_ftmhu")
 }
 
 [node name="newTitle" type="Control"]
@@ -72,14 +155,16 @@ horizontal_alignment = 1
 [node name="buttonController" type="Node" parent="."]
 script = ExtResource("1_5d5gr")
 
-[node name="Play" type="Button" parent="."]
-layout_mode = 1
+[node name="Play" type="Button" parent="buttonController"]
 anchors_preset = -1
-anchor_left = 0.33680555
-anchor_top = 0.4521605
-anchor_right = 0.6623223
-anchor_bottom = 0.7453704
-offset_right = 0.00048828125
+anchor_left = 0.33072916
+anchor_top = 0.37037036
+anchor_right = 0.6562459
+anchor_bottom = 0.5972222
+offset_left = -2.0
+offset_top = -1.9999847
+offset_right = -1.9995117
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(187.5, 95)
@@ -87,13 +172,44 @@ theme = ExtResource("1_v0ptk")
 text = "Play"
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Play")
-libraries = {
-&"": SubResource("AnimationLibrary_ftmhu")
-}
+[node name="How" type="Button" parent="buttonController"]
+anchors_preset = -1
+anchor_left = 0.33072916
+anchor_top = 0.37037036
+anchor_right = 0.6562459
+anchor_bottom = 0.60339504
+offset_left = -1.0
+offset_top = 202.00002
+offset_right = -0.9995117
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(187.5, 95)
+theme = ExtResource("1_v0ptk")
+text = "How?"
+metadata/_edit_use_anchors_ = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(576, 324)
 
-[connection signal="pressed" from="Play" to="buttonController" method="_on_play_pressed"]
+[node name="Mario" type="Sprite2D" parent="."]
+position = Vector2(206.99998, 415.99997)
+rotation = 0.0024249
+scale = Vector2(5.82, 5.82)
+texture = ExtResource("3_t8lra")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5isib")
+}
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(966, 494)
+texture = ExtResource("4_ftmhu")
+
+[connection signal="mouse_entered" from="buttonController/Play" to="buttonController" method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="buttonController/Play" to="buttonController" method="_on_play_mouse_exited"]
+[connection signal="pressed" from="buttonController/Play" to="buttonController" method="_on_play_pressed"]
+[connection signal="mouse_entered" from="buttonController/How" to="buttonController" method="_on_how_mouse_entered"]
+[connection signal="mouse_exited" from="buttonController/How" to="buttonController" method="_on_how_mouse_exited"]
+[connection signal="pressed" from="buttonController/How" to="buttonController" method="_on_how_pressed"]

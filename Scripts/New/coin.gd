@@ -11,16 +11,24 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		Globals.isPlayerBehindMysteryBox = true
-		$Timer.start()
-		$sound.play()
-		print("playong dound")
-		$Area2D/QuestionMarkBeforeWin.hide()
-		#print($Timer)
+
+
 
 func _on_timer_timeout() -> void:
-	Globals.nextLevel()
-	$Area2D/QuestionMarkBeforeWin.show()
+	queue_free()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("hi")
+	$sound.play()
+	$Timer.start()
+	hide()
+
 	pass # Replace with function body.
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("hi")
+	$sound.play()
+	$Timer.start()
+	hide()

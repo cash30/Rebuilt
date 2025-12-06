@@ -3,17 +3,21 @@ var titleScene        = load("res://Scenes/title.tscn")
 var oldGameTitleScene = load("res://old/scenes/tastlevel.tscn")
 var newTitleScreen    = load("res://Scenes/New/new_title.tscn")
 var level1            = load("res://Scenes/New/Level1.tscn")
+var newHowScene = load("res://Scenes/New/how.tscn")
 var isPlayerBehindMysteryBox = false
 var shouldNextLevelAnimationBeShowing = false
+var shouldMusicBePlaying = false
+var isMusicPlaying = false
 
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("restart"):
+		respawn()
 	pass
-
 func changeScene(scene):
 	get_tree().change_scene_to_packed(scene)
 

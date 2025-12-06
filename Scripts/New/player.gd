@@ -12,19 +12,30 @@ var rad = 45
 var last_position: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	circ = 2 * rad * PI
 	last_position = global_position
 	rad = $Marker2D.global_position.distance_to($Marker2D2.global_position)
+	circ = 2 * rad * PI
 
 func _physics_process(delta: float) -> void:
 	if Globals.isPlayerBehindMysteryBox:
 		$Camera2D.position_smoothing_enabled = true
+		#$Camera2D.camera.position_smoothing_preview = false
+		#$Camera2D.camera.use_physics_smoothing = true
+
 		position = get_parent().get_node("Goal").global_position 
 		remove_from_group("player")
 		hide()
 	else:
 		show()
-		$Camera2D.position_smoothing_enabled = false
+		#$Camera2D.position_smoothing_enabled = false
+		
+		
+	if abs(velocity.y) > 0:
+		circ = 100
+	else:
+		circ = 2 * rad * PI
+
+		
 		
 	if position.y > 250:
 		Globals.respawn()

@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc5gy2eglul16"]
+
+[ext_resource type="Theme" uid="uid://qea6tr13hs17" path="res://Themes/button.tres" id="1_objnv"]
+[ext_resource type="Script" uid="uid://cn0lqa8gm40hq" path="res://Scripts/New/pause_menu.gd" id="1_qqls2"]
+
+[node name="pauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qqls2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.6431373)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36805555
+anchor_top = 0.20833333
+anchor_right = 0.6414931
+anchor_bottom = 0.40123457
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_objnv")
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36805555
+anchor_top = 0.5555556
+anchor_right = 0.6414931
+anchor_bottom = 0.7484568
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_objnv")
+text = "Continue"
+metadata/_edit_use_anchors_ = true

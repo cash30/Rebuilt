@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7lp6unqffhsh"]
+[gd_scene load_steps=5 format=3 uid="uid://b7lp6unqffhsh"]
 
 [ext_resource type="Script" uid="uid://bmkghjqcyw6kd" path="res://Scripts/New/player.gd" id="1_jsrtk"]
 [ext_resource type="Texture2D" uid="uid://cayg6kpvv1ja1" path="res://Art/Revised/coin.png" id="2_cik4n"]
+[ext_resource type="PackedScene" uid="uid://cc5gy2eglul16" path="res://Scenes/New/pause_menu.tscn" id="3_cik4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jsrtk"]
 radius = 48.010414
@@ -31,3 +32,15 @@ offset_right = 48.0
 offset_bottom = 2.0
 color = Color(0.640397, 0, 0.13761061, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="pauseMenu" parent="." instance=ExtResource("3_cik4n")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -3292.0
+offset_top = -234.0
+offset_right = 3314.0
+offset_bottom = 366.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwewg7uvigr24"]
+[gd_scene load_steps=8 format=3 uid="uid://dwewg7uvigr24"]
 
 [ext_resource type="Texture2D" uid="uid://dhoqy3pc6fvqp" path="res://Art/Revised/Tiles.png" id="1_t1src"]
 [ext_resource type="PackedScene" uid="uid://b7lp6unqffhsh" path="res://Scenes/New/player.tscn" id="2_faght"]
 [ext_resource type="PackedScene" uid="uid://5aqq1e38ws5d" path="res://Scenes/New/enemy.tscn" id="3_w8fey"]
 [ext_resource type="PackedScene" uid="uid://dxijm1wrbqc5i" path="res://Scenes/New/goal.tscn" id="4_rxfi3"]
+[ext_resource type="PackedScene" uid="uid://dx5bssfmgsjdd" path="res://Scenes/New/camera.tscn" id="5_faght"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ywioa"]
 texture = ExtResource("1_t1src")
@@ -75,3 +76,6 @@ offset_bottom = 237.0
 scale = Vector2(0.07, 0.07)
 theme_override_font_sizes/font_size = 160
 text = "OOH lil jumpy islands!"
+
+[node name="Camera2D" parent="." instance=ExtResource("5_faght")]
+position = Vector2(-568, -11)

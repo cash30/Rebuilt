@@ -19,6 +19,3 @@ texture = ExtResource("2_cik4n")
 
 [node name="Marker2D2" type="Marker2D" parent="."]
 position = Vector2(48, 0)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)

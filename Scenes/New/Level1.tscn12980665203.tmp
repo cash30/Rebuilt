@@ -40,7 +40,7 @@ layer_0/tile_data = PackedInt32Array(196606, 65536, 0, 196607, 65536, 0, 131072,
 position = Vector2(-567, -0.9999981)
 scale = Vector2(0.155, 0.155)
 
-[node name="enemy" parent="." instance=ExtResource("4_x6ggi")]
+[node name="Node2D" parent="." instance=ExtResource("4_x6ggi")]
 position = Vector2(-759, -38)
 scale = Vector2(0.3, 0.3)
 
@@ -77,6 +77,4 @@ theme_override_font_sizes/font_size = 160
 text = "Jump Into the ? Block!"
 horizontal_alignment = 1
 
-[node name="Camera2D" parent="." instance=ExtResource("5_cxahc")]
-position = Vector2(-635, -58)
-position_smoothing_enabled = false
+[node name="Node2D2" parent="." instance=ExtResource("5_cxahc")]

@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Globals.isPlayerBehindMysteryBox:
-		$Camera2D.position_smoothing_enabled = true
+		#$Camera2D.position_smoothing_enabled = true
 		#$Camera2D.camera.position_smoothing_preview = false
 		#$Camera2D.camera.use_physics_smoothing = true
 

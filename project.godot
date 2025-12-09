@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Rebuilt"
+config/name="Rebuilt w15"
 run/main_scene="uid://hn0hj1j16xhe"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 run/max_fps=240
